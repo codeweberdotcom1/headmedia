@@ -25,7 +25,7 @@ function services($atts, $content = null){
 	
 global $porto_settings, $porto_layout, $post, $porto_member_socials;
 
-$featured_posts = get_field($atts['field']);
+$featured_posts = get_field($atts['transport']);
 		
 if( $featured_posts ): ?>
     <ul class="porto-info-list block-ul-zw mb-0">

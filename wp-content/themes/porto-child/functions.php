@@ -32,7 +32,7 @@ if( $featured_posts ): ?>
     <?php  foreach( $featured_posts as $post ): 
         // Setup this post for WP functions (variable must be named $post).
         setup_postdata($post); 
-?><i class="far fa-check-circle"></i>
+?>
         <li class="porto-info-list-item"><i class="porto-info-icon far fa-check-circle"></i>
 			<div class="porto-info-list-item-desc" font-size:="" 16px;="" style="font-size: 16px;"><a title="Перейти к услуге <?php the_title(); ?>" href="<?php the_permalink(); ?>"><?php the_title(); ?></a></div></li>
     <?php endforeach; ?>

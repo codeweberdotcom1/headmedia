@@ -47,4 +47,36 @@ if( $featured_posts ): ?>
     return  $output;
 }?>
 <?php
-add_shortcode( 'service', 'services' );?>
+add_shortcode( 'service', 'services' );
+
+
+
+
+function services01($atts, $content = null){
+    ob_start();
+	
+global $porto_settings, $porto_layout, $post, $porto_member_socials;
+
+$featured_posts = get_field($atts['field']);
+		
+if( $featured_posts ): ?>
+    <ul class="porto-info-list block-ul-zw mb-0">
+    <?php  foreach( $featured_posts as $post ): 
+        // Setup this post for WP functions (variable must be named $post).
+        setup_postdata($post); 
+?>
+        <li style="padding-top: 0.4em; padding-bottom: 0.4em" class="porto-info-list-item"><i style="font-size: 1.1rem; color: #00396F;" class="porto-info-icon far fa-check-circle"></i>
+			<div class="porto-info-list-item-desc" font-size:="" 16px;="" style="font-size: 16px;"><a class="text-secondary" title="Перейти к услуге <?php the_title(); ?>" href="<?php the_permalink(); ?>"><?php the_title(); ?></a></div></li>
+    <?php endforeach; ?>
+    </ul>
+    <?php 
+    // Reset the global post object so that the rest of the page works correctly.
+    wp_reset_postdata(); ?>
+<?php endif; ?>
+<?php
+    $output = ob_get_contents();
+    ob_end_clean(); 
+    return  $output;
+}?>
+<?php
+add_shortcode( 'service01', 'services01' );?>

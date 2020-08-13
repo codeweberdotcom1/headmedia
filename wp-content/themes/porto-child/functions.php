@@ -33,7 +33,7 @@ if( $featured_posts ): ?>
         // Setup this post for WP functions (variable must be named $post).
         setup_postdata($post); 
 ?>
-        <li class="porto-info-list-item"><i style="font-size: 1.1rem; color: #00396F;" class="porto-info-icon far fa-check-circle"></i>
+        <li style="padding-top: 0.4em; padding-bottom: 0.4em" class="porto-info-list-item"><i style="font-size: 1.1rem; color: #00396F;" class="porto-info-icon far fa-check-circle"></i>
 			<div class="porto-info-list-item-desc" font-size:="" 16px;="" style="font-size: 16px;"><a class="text-secondary" title="Перейти к услуге <?php the_title(); ?>" href="<?php the_permalink(); ?>"><?php the_title(); ?></a></div></li>
     <?php endforeach; ?>
     </ul>

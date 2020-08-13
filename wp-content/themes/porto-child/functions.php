@@ -58,9 +58,11 @@ function services01($atts, $content = null){
 global $porto_settings, $porto_layout, $post, $porto_member_socials;
 
 $featured_posts = get_field($atts['field']);
+var_dump($featured_posts);
 		
 if( $featured_posts ): ?>
     <ul class="porto-info-list block-ul-zw mb-0">
+
     <?php  foreach( $featured_posts as $post ): 
         // Setup this post for WP functions (variable must be named $post).
         setup_postdata($post); 

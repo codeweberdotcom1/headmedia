@@ -18,9 +18,6 @@ function porto_child_css() {
 
 
 
-<?php 
-
-
 
 
 function services($atts, $content = null){

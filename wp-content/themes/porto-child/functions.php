@@ -137,5 +137,5 @@ if( $featured_posts ): ?>
     return  $output;
 }?>
 <?php
-add_shortcode( 'service02', 'services01' );?>
+add_shortcode( 'service02', 'services02' );?>
 

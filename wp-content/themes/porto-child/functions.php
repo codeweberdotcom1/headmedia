@@ -91,7 +91,6 @@ add_shortcode( 'service01', 'services01' );?>
 global $porto_settings, $porto_layout, $post, $porto_member_socials;
 
 $featured_posts = get_field($atts['field']);
-var_dump($featured_posts);
 		
 if( $featured_posts ): ?>
 <div class="container">

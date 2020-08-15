@@ -158,12 +158,13 @@ add_shortcode( 'zagolovok', 'zagolovok' );?>
 
 
 
+
 <?php function service_image($atts, $content = null){
     ob_start();
 global $porto_settings, $porto_layout, $post, $porto_member_socials;
 $featured_post = get_field($atts['field']);
 if( !empty( $featured_post ) ): ?>
-    <img src="<?php echo esc_url($featured_post['url']); ?>" alt="<?php echo esc_attr($featured_post['alt']); ?>" />
+    <img src="<?php echo esc_url($featured_post['url']); ?>" alt="<?php echo $atts['alt'] ?>" />
 <?php endif; 
     $output = ob_get_contents();
     ob_end_clean(); 

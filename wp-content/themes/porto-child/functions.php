@@ -149,7 +149,6 @@ global $porto_settings, $porto_layout, $post, $porto_member_socials;
 
 $featured_posts = get_field($atts['field']);
 
-<?php
 
 if( $featured_post ): ?>
     <h3><?php echo esc_html( $featured_post->post_title ); ?></h3>

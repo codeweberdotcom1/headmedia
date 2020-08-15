@@ -147,12 +147,10 @@ add_shortcode( 'service02', 'services02' );?>
 global $porto_settings, $porto_layout, $post, $porto_member_socials;
 
 $featured_post = get_field($atts['field']);
+
 if( $featured_post ): ?>
     <h3><?php echo esc_html( $featured_post->post_title ); ?></h3>
 <?php endif; ?>
-if( $featured_post ): ?>
-    <a href="<?php the_permalink(); ?>"><h3><?php the_title(); ?><h3></a>
-<?php endif; 
     $output = ob_get_contents();
     ob_end_clean(); 
     return  $output;

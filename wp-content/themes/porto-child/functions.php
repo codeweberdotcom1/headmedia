@@ -156,3 +156,37 @@ if( $featured_post ): ?>
 <?php
 add_shortcode( 'zagolovok', 'zagolovok' );?>
 
+
+
+
+
+<?php function subcategory($atts, $content = null){
+    ob_start();
+	
+global $porto_settings, $porto_layout, $post, $porto_member_socials;
+
+$featured_posts = get_field($atts['field']);
+		
+if( $featured_posts ): ?>
+					<ul class="ulli list-serviсes-hm list list-icons mb-0">
+						<?php  foreach( $featured_posts as $post ): 
+        // Setup this post for WP functions (variable must be named $post).
+        setup_postdata($post); 
+?>
+						<li class="mb-2 list-item">
+							<a class="text-secondary" title="Перейти к услуге <?php the_title(); ?>" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+						</li>
+						<?php endforeach; ?>
+					</ul>
+<?php 
+    // Reset the global post object so that the rest of the page works correctly.
+    wp_reset_postdata(); ?>
+<?php endif; ?>
+<?php
+    $output = ob_get_contents();
+    ob_end_clean(); 
+    return  $output;
+}?>
+<?php
+add_shortcode( 'subcategory', 'subcategory' );?>
+

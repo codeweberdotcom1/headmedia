@@ -104,7 +104,7 @@ if( $featured_posts ): ?>
 					<img alt="Bootstrap Image Preview" src="https://via.placeholder.com/100" />
 				</div>
 				<div class="col-8 col-md-10 d-block title-block">
-					<h3 class="mb-0 mb-lg-3">Реклама в метро</h3>
+					<a href="#"><h3 class="mb-0 mb-lg-3">Реклама в метро</h3></a>
 				</div>
 <div class="porto-separator col-12  mt-3 mt-lg-0"><hr class=" separator-line align_center solid" style="background-color:rgba(0,0,0,0.06);"></div>
 			</div>

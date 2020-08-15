@@ -149,7 +149,7 @@ global $porto_settings, $porto_layout, $post, $porto_member_socials;
 $featured_post = get_field($atts['field']);
 
 if( $featured_post ): ?>
-    <h3><?php echo esc_html( $featured_post ); ?></h3>
+    <h3><?php echo esc_html( $featured_post->post_title ); ?></h3>
 <?php endif; 
     $output = ob_get_contents();
     ob_end_clean(); 

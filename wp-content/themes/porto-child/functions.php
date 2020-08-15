@@ -148,14 +148,29 @@ global $porto_settings, $porto_layout, $post, $porto_member_socials;
 
 $featured_post = get_field($atts['field']);
 
-if( $featured_post ): ?>
-    <h3><?php echo esc_html( $featured_post->post_title ); ?></h3>
+if( $featured_posts ): ?>
+    <ul>
+    <?php foreach( $featured_posts as $post ): 
+
+        // Setup this post for WP functions (variable must be named $post).
+        setup_postdata($post); ?>
+        <li>
+            <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+            
+        </li>
+    <?php endforeach; ?>
+    </ul>
+    <?php 
+    // Reset the global post object so that the rest of the page works correctly.
+    wp_reset_postdata(); ?>
 <?php endif; 
     $output = ob_get_contents();
     ob_end_clean(); 
     return  $output;
 }?>
 <?php add_shortcode( 'zagolovok', 'zagolovok' );?>
+
+
 
 
 

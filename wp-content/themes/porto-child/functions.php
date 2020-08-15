@@ -146,7 +146,7 @@ add_shortcode( 'service02', 'services02' );?>
     ob_start();
 global $porto_settings, $porto_layout, $post, $porto_member_socials;
 
-$featured_post = get_field($atts['field']);
+$featured_posts = get_field($atts['field']);
 
 if( $featured_posts ): ?>
     <ul>

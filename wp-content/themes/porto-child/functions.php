@@ -148,7 +148,7 @@ global $porto_settings, $porto_layout, $post, $porto_member_socials;
 
 $featured_post = get_field($atts['field']);
 if( $featured_post ): ?>
-    <a href="<?php the_permalink(); ?>"><h3><?php the_title(); ?><h3></a>
+    <a href="<?php the_permalink(); ?>"><h3><?php echo esc_html( $featured_post->post_title ); ?><h3></a>
 <?php endif; 
     $output = ob_get_contents();
     ob_end_clean(); 
@@ -207,7 +207,6 @@ if( $featured_posts ): ?>
 global $porto_settings, $porto_layout, $post, $porto_member_socials;
 
 $featured_posts = get_field($atts['field']);
-
 		
 if( $featured_posts ): ?>
 					<ul class="ulli list-serviсes-hm list list-icons mb-0">
@@ -216,7 +215,7 @@ if( $featured_posts ): ?>
         setup_postdata($post); 
 ?>
 						<li class="mb-2 list-item">
-							<a class="text-secondary" title="Перейти к услуге <?php the_title(); ?>" href="<?php the_permalink(); ?>"><?php echo esc_html( $featured_post->post_title ); ?></a>
+							<a class="text-secondary" title="Перейти к услуге <?php the_title(); ?>" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
 						</li>
 						<?php endforeach; ?>
 					</ul>

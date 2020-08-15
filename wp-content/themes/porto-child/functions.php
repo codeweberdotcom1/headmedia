@@ -158,6 +158,31 @@ add_shortcode( 'zagolovok', 'zagolovok' );?>
 
 
 
+<?php function service_image($atts, $content = null){
+    ob_start();
+global $porto_settings, $porto_layout, $post, $porto_member_socials;
+$featured_post = get_field($atts['field']);
+if( !empty( $featured_post ) ): ?>
+    <img src="<?php echo esc_url($featured_post['url']); ?>" alt="<?php echo esc_attr($featured_post['alt']); ?>" />
+<?php endif; 
+    $output = ob_get_contents();
+    ob_end_clean(); 
+    return  $output;
+}?>
+<?php
+add_shortcode( 'service_image', 'service_image' );?>
+
+
+
+
+<?php 
+$image = get_field('image');
+if( !empty( $image ) ): ?>
+    <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+<?php endif; ?>
+
+
+
 
 
 <?php function subcategory($atts, $content = null){

@@ -155,7 +155,7 @@ if( $featured_posts ): ?>
         // Setup this post for WP functions (variable must be named $post).
         setup_postdata($post); ?>
         
-            <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+            <a href="<?php the_permalink(); ?>"><h3><?php the_title(); ?></h3></a>
             
        
     <?php endforeach; ?>

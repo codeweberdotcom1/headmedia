@@ -145,6 +145,7 @@ add_shortcode( 'service02', 'services02' );?>
 <?php function zagolovok($atts, $content = null){
     ob_start();
 global $porto_settings, $porto_layout, $post, $porto_member_socials;
+
 $featured_post = get_field($atts['field']);
 if( $featured_post ): ?>
     <a href="<?php the_permalink(); ?>"><h3><?php the_title(); ?><h3></a>
@@ -163,6 +164,7 @@ add_shortcode( 'zagolovok', 'zagolovok' );?>
     ob_start();
 global $porto_settings, $porto_layout, $post, $porto_member_socials;
 $featured_post = get_field($atts['field']);
+$size = 'thumbnail';
 if( !empty( $featured_post ) ): ?>
     <img src="<?php echo esc_url($featured_post['url']); ?>" alt="<?php echo $atts['alt'] ?>" />
 <?php endif; 

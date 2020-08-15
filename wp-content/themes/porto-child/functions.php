@@ -180,7 +180,22 @@ add_shortcode( 'service_image', 'service_image' );?>
 
 
 
-
+<?php
+$featured_posts = get_field('featured_posts');
+if( $featured_posts ): ?>
+    <ul>
+    <?php foreach( $featured_posts as $featured_post ): 
+        $permalink = get_permalink( $featured_post->ID );
+        $title = get_the_title( $featured_post->ID );
+        $custom_field = get_field( 'field_name', $featured_post->ID );
+        ?>
+        <li>
+            <a href="<?php echo esc_url( $permalink ); ?>"><?php echo esc_html( $title ); ?></a>
+            <span>A custom field from this post: <?php echo esc_html( $custom_field ); ?></span>
+        </li>
+    <?php endforeach; ?>
+    </ul>
+<?php endif; ?>
 
 
 
@@ -192,6 +207,9 @@ add_shortcode( 'service_image', 'service_image' );?>
 global $porto_settings, $porto_layout, $post, $porto_member_socials;
 
 $featured_posts = get_field($atts['field']);
+$permalink = get_permalink( $featured_post->ID );
+$title = get_the_title( $featured_post->ID );
+$custom_field = get_field( 'field_name', $featured_post->ID );
 		
 if( $featured_posts ): ?>
 					<ul class="ulli list-serviсes-hm list list-icons mb-0">
@@ -200,7 +218,7 @@ if( $featured_posts ): ?>
         setup_postdata($post); 
 ?>
 						<li class="mb-2 list-item">
-							<a class="text-secondary" title="Перейти к услуге <?php the_title(); ?>" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+							<a class="text-secondary" title="Перейти к услуге <?php the_title(); ?>" href="<?php the_permalink(); ?>"><?php the_title(); echo $title?></a>
 						</li>
 						<?php endforeach; ?>
 					</ul>
@@ -215,4 +233,25 @@ if( $featured_posts ): ?>
 }?>
 <?php
 add_shortcode( 'subcategory', 'subcategory' );?>
+
+
+
+
+
+<?php
+$featured_posts = get_field('featured_posts');
+if( $featured_posts ): ?>
+    <ul>
+    <?php foreach( $featured_posts as $featured_post ): 
+        $permalink = get_permalink( $featured_post->ID );
+        $title = get_the_title( $featured_post->ID );
+        $custom_field = get_field( 'field_name', $featured_post->ID );
+        ?>
+        <li>
+            <a href="<?php echo esc_url( $permalink ); ?>"><?php echo esc_html( $title ); ?></a>
+            <span>A custom field from this post: <?php echo esc_html( $custom_field ); ?></span>
+        </li>
+    <?php endforeach; ?>
+    </ul>
+<?php endif; ?>
 

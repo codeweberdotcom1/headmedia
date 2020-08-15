@@ -156,7 +156,7 @@ if( $featured_post ): ?>
 
 
 
-<?php
+
     $output = ob_get_contents();
     ob_end_clean(); 
     return  $output;

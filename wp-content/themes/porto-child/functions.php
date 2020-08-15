@@ -156,7 +156,7 @@ if( $featured_posts ): ?>
         setup_postdata($post); ?>
         <li>
             <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-            <span>A custom field from this post: <?php the_field( 'field_name' ); ?></span>
+            
         </li>
     <?php endforeach; ?>
     </ul>

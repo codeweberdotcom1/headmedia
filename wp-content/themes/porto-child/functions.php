@@ -141,7 +141,6 @@ add_shortcode( 'service02', 'services02' );?>
 
 
 
-<?php
 
 <?php function services03($atts, $content = null){
     ob_start();

@@ -156,22 +156,7 @@ if( $featured_post ): ?>
 <?php endif; 
 
 
-if( $featured_posts ): ?>
-    
-    <?php foreach( $featured_posts as $post ): 
 
-        // Setup this post for WP functions (variable must be named $post).
-        setup_postdata($post); ?>
-        
-            <a href="<?php the_permalink(); ?>"><h3><?php the_title(); ?></h3></a>
-            
-       
-    <?php endforeach; ?>
-    
-    <?php 
-    // Reset the global post object so that the rest of the page works correctly.
-    wp_reset_postdata(); ?>
-<?php endif; ?>
 <?php
     $output = ob_get_contents();
     ob_end_clean(); 

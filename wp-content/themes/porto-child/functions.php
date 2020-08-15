@@ -150,7 +150,7 @@ $featured_post = get_field($atts['field']);
 
 if( $featured_post ): ?>
     <h3><?php echo esc_html( $featured_post->post_title ); ?></h3>
-<?php endif; ?>
+<?php endif; 
     $output = ob_get_contents();
     ob_end_clean(); 
     return  $output;

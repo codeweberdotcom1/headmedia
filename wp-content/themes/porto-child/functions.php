@@ -151,8 +151,7 @@ $featured_post = get_field($atts['field']);
 
 
 if( $featured_post ): ?>
-    <h3><?php echo esc_html( $featured_post->post_title ); ?>5</h3>
-    <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+    <a href="<?php the_permalink(); ?>"><h2><?php the_title(); ?><h2></a>
 <?php endif; 
 
 

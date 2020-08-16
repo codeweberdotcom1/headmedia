@@ -18,8 +18,6 @@ function porto_child_css() {
 
 
 
-
-
 function services($atts, $content = null){
     ob_start();
 	
@@ -139,9 +137,6 @@ add_shortcode( 'service02', 'services02' );?>
 
 
 
-
-
-
 <?php function zagolovok($atts, $content = null){
     ob_start();
 global $porto_settings, $porto_layout, $post, $porto_member_socials;
@@ -168,9 +163,6 @@ if( $featured_posts ): ?>
 
 
 
-
-
-
 <?php function service_image($atts, $content = null){
     ob_start();
 global $porto_settings, $porto_layout, $post, $porto_member_socials;
@@ -178,7 +170,6 @@ $featured_post = get_field($atts['field']);
 $size = 'thumbnail';
     $thumb = $featured_post['sizes'][ $size ];
 if( !empty( $featured_post ) ): ?>
-
     <img src="<?php echo esc_url($thumb); ?>" alt="<?php echo $atts['alt'] ?>" />
 <?php endif; 
     $output = ob_get_contents();
@@ -190,35 +181,10 @@ add_shortcode( 'service_image', 'service_image' );?>
 
 
 
-
-<?php
-$featured_posts = get_field('featured_posts');
-if( $featured_posts ): ?>
-    <ul>
-    <?php foreach( $featured_posts as $featured_post ): 
-        $permalink = get_permalink( $featured_post->ID );
-        $title = get_the_title( $featured_post->ID );
-        $custom_field = get_field( 'field_name', $featured_post->ID );
-        ?>
-        <li>
-            <a href="<?php echo esc_url( $permalink ); ?>"><?php echo esc_html( $title ); ?></a>
-            <span>A custom field from this post: <?php echo esc_html( $custom_field ); ?></span>
-        </li>
-    <?php endforeach; ?>
-    </ul>
-<?php endif; ?>
-
-
-
-
-
 <?php function subcategory($atts, $content = null){
     ob_start();
-	
 global $porto_settings, $porto_layout, $post, $porto_member_socials;
-
-$featured_posts = get_field($atts['field']);
-		
+$featured_posts = get_field($atts['field']);		
 if( $featured_posts ): ?>
 					<ul class="ulli list-serviсes-hm list list-icons mb-0">
 						<?php  foreach( $featured_posts as $post ): 
@@ -241,25 +207,4 @@ if( $featured_posts ): ?>
 }?>
 <?php
 add_shortcode( 'subcategory', 'subcategory' );?>
-
-
-
-
-
-<?php
-$featured_posts = get_field('featured_posts');
-if( $featured_posts ): ?>
-    <ul>
-    <?php foreach( $featured_posts as $featured_post ): 
-        $permalink = get_permalink( $featured_post->ID );
-        $title = get_the_title( $featured_post->ID );
-        $custom_field = get_field( 'field_name', $featured_post->ID );
-        ?>
-        <li>
-            <a href="<?php echo esc_url( $permalink ); ?>"><?php echo esc_html( $title ); ?></a>
-            <span>A custom field from this post: <?php echo esc_html( $custom_field ); ?></span>
-        </li>
-    <?php endforeach; ?>
-    </ul>
-<?php endif; ?>
 

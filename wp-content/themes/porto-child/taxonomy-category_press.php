@@ -23,7 +23,7 @@ $member_options = get_metadata( $term->taxonomy, $term->term_id, 'member_options
 				<?php
 				while ( have_posts() ) {
 					the_post();
-					get_template_part( 'content', 'archive-member' );
+					
 				}
 				?>
 			</div>

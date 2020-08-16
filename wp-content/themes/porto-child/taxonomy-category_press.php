@@ -10,14 +10,13 @@ global $porto_settings, $porto_layout, $post;
 
 <?php
 // get the current taxonomy term
-$terms = get_queried_object();
 
-$draught_links = array();
 
-foreach ( $terms as $term ) {
-        $draught_links[] = $term->name;
+    $terms = get_queried_object();
+    foreach($terms as $term) {
+        echo '<a class="icon-hv-link" href="' . get_term_link($term) . '"><i class="icon-left-open-big"></i><span>' . $term->name . '</span></a>';
     }
-?>
+  ?>
 
 
 <?php get_footer();?>

@@ -10,7 +10,7 @@ global $porto_settings, $porto_layout, $post;
 
 <?php
 // get the current taxonomy term
-$term = get_queried_object();
+$terms = get_queried_object();
 
 $draught_links = array();
 

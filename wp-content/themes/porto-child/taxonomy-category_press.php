@@ -7,15 +7,17 @@
 global $porto_settings, $porto_layout, $post;
 ?>
 <?php get_header();?>
-
-<?php $size = 'thumbnail';
-    $thumb = $featured_post['sizes'][ $size ]; ?>
-
+<?php
+$image = get_field('image');
+$size = 'medium'; // (thumbnail, medium, large, full or custom size)
+?>
 
 <div class="container-fluid">
 	<div class="row">
 		<div class="col-md-6">
-			<img alt="Bootstrap Image Preview" src="<?php echo esc_url($thumb); ?>" />
+			<img alt="Bootstrap Image Preview" src="<?php if( $image ) {
+    echo wp_get_attachment_image( $image, $size );
+}?>" />
 		</div>
 		<div class="col-md-6">
 			<p>

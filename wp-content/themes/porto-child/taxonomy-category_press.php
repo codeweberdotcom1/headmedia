@@ -9,9 +9,9 @@ global $porto_settings, $porto_layout, $post;
 <?php get_header();?>
 
 
-<?php $term = get_queried_object();
+<?php 
 
-$terms = get_terms( '$term' );
+$terms = get_queried_object();
 
 if( $terms && ! is_wp_error($terms) ){
 	echo "<ul>";

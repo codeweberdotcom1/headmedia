@@ -6,7 +6,6 @@ global $porto_settings, $wp_query;
 $term    = $wp_query->queried_object;
 $term_id = $term->term_id;
 
-$member_options = get_metadata( $term->taxonomy, $term->term_id, 'member_options', true ) == 'member_options' ? true : false;
 
 ?>
 

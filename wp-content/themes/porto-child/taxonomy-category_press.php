@@ -5,31 +5,36 @@
  */ 
 
 global $porto_settings, $wp_query;
-$term    = $wp_query->queried_object;
-$term_id = $term->term_id;
-$member_options = get_metadata( $term->taxonomy, $term->term_id, 'member_options', true ) == 'member_options' ? true : false;
+
 
 ?>
 
 <?php get_header();?>
 
-<?php if ( category_description() ) : ?>
-		<div class="page-content">
-			<?php echo category_description(); ?>
-		</div>
-	<?php endif; ?>
-
-	<div class="member-row members-container row <?php echo porto_generate_column_classes( $porto_settings['member-columns'] ); ?>">
-				<?php
-				while ( have_posts() ) {
-					the_post();
-					
-				}
-				?>
-			</div>
-			<?php porto_pagination(); ?>
-		</div>
-		<?php wp_reset_postdata(); ?>
+<?php
+$terms = get_terms(
+  array(
+    'taxonomy'   => 'my_taxonomy',
+    'hide_empty' => true,
+    'pad_counts'  => true,
+    'orderby' => 'count',
+    'order' => 'DESC',
+  )
+);
+  
+if ( ! empty( $terms ) && is_array( $terms ) ) {
+  echo '<ul class="list-my_taxonomy">';
+  foreach ( $terms as $term ) { ?>
+    <li>
+      <a href="<?php echo esc_url( get_term_link( $term ) ) ?>">
+        <?php echo $term->name; ?> (<?php echo $term->count; ?>)
+      </a>
+    </li>
+    <?php
+  }
+  echo '</ul>';
+}
+?>
 
 
 

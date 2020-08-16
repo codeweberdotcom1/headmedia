@@ -7,14 +7,13 @@
 global $porto_settings, $wp_query;
 $term    = $wp_query->queried_object;
 $term_id = $term->term_id;
-
+$member_options = get_metadata( $term->taxonomy, $term->term_id, 'member_options', true ) == 'member_options' ? true : false;
 
 ?>
 
 <?php get_header();?>
 
 
-<?php $term = get_queried_object();?>
 
 <?php if (have_posts()) : while (have_posts()) : the_post();?>
         <?php the_content();?>

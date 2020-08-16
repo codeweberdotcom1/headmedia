@@ -8,12 +8,14 @@ global $porto_settings, $porto_layout, $post;
 ?>
 <?php get_header();?>
 
+<?php $size = 'thumbnail';
+    $thumb = $featured_post['sizes'][ $size ]; ?>
 
 
 <div class="container-fluid">
 	<div class="row">
 		<div class="col-md-6">
-			<img alt="Bootstrap Image Preview" src="https://www.layoutit.com/img/sports-q-c-140-140-3.jpg" />
+			<img alt="Bootstrap Image Preview" src="<?php echo esc_url($thumb); ?>" />
 		</div>
 		<div class="col-md-6">
 			<p>
@@ -26,6 +28,8 @@ global $porto_settings, $porto_layout, $post;
 		</div>
 	</div>
 </div>
+
+
 
 <?php $pages = get_pages(array( 'child_of'=>1 )); ?>
 <ul>

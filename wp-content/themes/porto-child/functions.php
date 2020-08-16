@@ -170,7 +170,7 @@ $featured_post = get_field($atts['field']);
 $size = 'thumbnail';
     $thumb = $featured_post['sizes'][ $size ];
 if( !empty( $featured_post ) ): ?>
-    <img src="<?php echo esc_url($thumb); ?>" alt="<?php echo $atts['alt'] ?>" />
+    <img src="<?php echo esc_url($thumb); ?>" alt="<?php echo $atts['alt'] ?>" title="<?php echo $atts['title'] ?>"/>
 <?php endif; 
     $output = ob_get_contents();
     ob_end_clean(); 

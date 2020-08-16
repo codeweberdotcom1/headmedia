@@ -208,3 +208,40 @@ if( $featured_posts ): ?>
 <?php
 add_shortcode( 'subcategory', 'subcategory' );?>
 
+
+
+
+
+
+
+
+
+
+<?php function subcategoryterm($atts, $content = null){
+    ob_start();
+global $porto_settings, $porto_layout, $post, $porto_member_socials;
+
+$terms = get_field($atts['field']);
+	
+if( $terms ): ?> 
+					<ul class="ulli list-serviсes-hm list list-icons mb-0">
+						<?php  foreach( $terms as $term ): 
+        // Setup this post for WP functions (variable must be named $post).
+        setup_postdata($post); 
+?>
+						<li class="mb-2 list-item">
+							<a class="text-secondary" title="Перейти к услуге <?php echo esc_html( $term->name ); ?>>" href="<?php echo esc_url( get_term_link( $term ) ); ?>"><?php echo esc_html( $term->name ); ?></a>
+						</li>
+						<?php endforeach; ?>
+					</ul>
+<?php 
+    // Reset the global post object so that the rest of the page works correctly.
+    wp_reset_postdata(); ?>
+<?php endif; ?>
+<?php
+    $output = ob_get_contents();
+    ob_end_clean(); 
+    return  $output;
+}?>
+<?php
+add_shortcode( 'subcategoryterm', 'subcategoryterm' );?>

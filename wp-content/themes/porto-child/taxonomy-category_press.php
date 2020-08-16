@@ -8,8 +8,6 @@ global $porto_settings, $porto_layout, $post;
 ?>
 <?php get_header();?>
 
-<?php
-// get the current taxonomy term
 
 <?php if ( category_description() ) : ?>
 		<div class="page-content">

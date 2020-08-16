@@ -8,10 +8,8 @@ global $porto_settings, $porto_layout, $post;
 ?>
 <?php get_header();?>
 
-<?php 
-$image = get_field('image_post');
-if( !empty( $image ) ): ?>
-    <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+<?php if( get_field('image_post') ): ?>
+    <img src="<?php the_field('image_post'); ?>" />
 <?php endif; ?>
 
 <div class="container-fluid">

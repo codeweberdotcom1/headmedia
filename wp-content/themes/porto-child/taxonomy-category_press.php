@@ -11,11 +11,8 @@ global $porto_settings, $porto_layout, $post;
 <?php
 // get the current taxonomy term
 
-
-    $terms = get_queried_object();
-    foreach($terms as $term) {
-        echo  get_term_link($term);
-    }
+$queried_object = get_queried_object();
+    var_dump( $queried_object );
   ?>
 
 

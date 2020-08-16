@@ -31,20 +31,4 @@ global $porto_settings, $porto_layout, $post;
 
 
 
-<?php $pages = get_pages(array( 'child_of'=>1 )); ?>
-<ul>
-	<?php foreach( $pages as $page ){ ?>
-		<li>
-			<?php echo get_the_post_thumbnail( $page->ID, 'thumbnail'); ?>
-			<h1><?php echo get_the_title($page); ?></h1>
-			<?php echo get_the_excerpt($page); ?>
-		</li>
-	<?php } ?>
-</ul>
-<?php
-$queried_object = get_queried_object();
-    var_dump( $queried_object );
-  ?>
-
-
 <?php get_footer();?>

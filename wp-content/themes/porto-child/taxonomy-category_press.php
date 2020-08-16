@@ -12,12 +12,15 @@ global $porto_settings, $porto_layout, $post;
 <?php $term = get_queried_object();?>
 
 <?php 
-   $tax = $wp_query->get_queried_object();
-   echo ''. $tax->name . '';
-   echo "<br>";
-   echo ''. $tax->description .''; 
-?>
 
+// vars
+$queried_object = get_queried_object(); 
+$taxonomy = $queried_object->taxonomy;
+$term_id = $queried_object->term_id;  
+
+$GLOBALS['wp_embed']->post_ID = $taxonomy . '_' . $term_id;
+
+?>
 
 
 <?php get_footer();?>

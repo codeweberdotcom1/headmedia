@@ -9,18 +9,18 @@ global $porto_settings, $porto_layout, $post;
 <?php get_header();?>
 
 
-<?php $term = get_queried_object();?>
+<?php $term = get_queried_object();
 
-<?php 
+$terms = get_terms( '$term' );
 
-// vars
-$queried_object = get_queried_object(); 
-$taxonomy = $queried_object->taxonomy;
-$term_id = $queried_object->term_id;  
+if( $terms && ! is_wp_error($terms) ){
+	echo "<ul>";
+	foreach( $terms as $term ){
+		echo "<li>". $term->name ."</li>";
 
-$GLOBALS['wp_embed']->post_ID = $taxonomy . '_' . $term_id;
-
-?>
+	}
+	echo "</ul>";
+}
 
 
 <?php get_footer();?>

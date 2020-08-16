@@ -17,7 +17,7 @@ $draught_links = array();
 foreach ( $terms as $term ) {
         $draught_links[] = $term->name;
     }
-
+?>
 
 
 <?php get_footer();?>

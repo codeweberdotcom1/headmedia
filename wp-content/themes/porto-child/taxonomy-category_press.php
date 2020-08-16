@@ -8,7 +8,7 @@ global $porto_settings, $porto_layout, $post;
 ?>
 <?php get_header();?>
 <?php
-$image = get_field('image');
+$image = get_field('image_post');
 $size = 'medium'; // (thumbnail, medium, large, full or custom size)
 ?>
 

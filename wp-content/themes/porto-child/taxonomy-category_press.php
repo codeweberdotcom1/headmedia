@@ -7,17 +7,17 @@
 global $porto_settings, $porto_layout, $post;
 ?>
 <?php get_header();?>
-<?php
+
+<?php 
 $image = get_field('image_post');
-$size = 'medium'; // (thumbnail, medium, large, full or custom size)
-?>
+if( !empty( $image ) ): ?>
+    <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+<?php endif; ?>
 
 <div class="container-fluid">
 	<div class="row">
 		<div class="col-md-6">
-			<img alt="Bootstrap Image Preview" src="<?php 
-    echo wp_get_attachment_image( $image, $size );
-?>" />
+			<img alt="Bootstrap Image Preview" src="https://www.layoutit.com/img/sports-q-c-140-140-3.jpg" />
 		</div>
 		<div class="col-md-6">
 			<p>

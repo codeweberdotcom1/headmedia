@@ -22,5 +22,5 @@ if( $terms && ! is_wp_error($terms) ){
 	echo "</ul>";
 }
 
-
+?>
 <?php get_footer();?>

@@ -15,9 +15,9 @@ $size = 'medium'; // (thumbnail, medium, large, full or custom size)
 <div class="container-fluid">
 	<div class="row">
 		<div class="col-md-6">
-			<img alt="Bootstrap Image Preview" src="<?php if( $image ) {
+			<img alt="Bootstrap Image Preview" src="<?php 
     echo wp_get_attachment_image( $image, $size );
-}?>" />
+?>" />
 		</div>
 		<div class="col-md-6">
 			<p>

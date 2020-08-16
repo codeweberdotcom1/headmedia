@@ -11,6 +11,13 @@ global $porto_settings, $porto_layout, $post;
 <?php
 // get the current taxonomy term
 
+<?php if ( category_description() ) : ?>
+		<div class="page-content">
+			<?php echo category_description(); ?>
+		</div>
+	<?php endif; ?>
+
+<?php
 $queried_object = get_queried_object();
     var_dump( $queried_object );
   ?>

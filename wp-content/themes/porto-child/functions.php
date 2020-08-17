@@ -148,9 +148,9 @@ if( $featured_posts ): ?>
         // Setup this post for WP functions (variable must be named $post).
         setup_postdata($post); ?>
         <a href="<?php the_permalink(); ?>"><h3 style="font-size: 18px" class="text-uppercase"><?php the_title(); ?></h3></a>
-        </li>
+        
     <?php endforeach; ?>
-    </ul>
+  
     <?php 
     // Reset the global post object so that the rest of the page works correctly.
     wp_reset_postdata(); ?>
@@ -160,6 +160,33 @@ if( $featured_posts ): ?>
     return  $output;
 }?>
 <?php add_shortcode( 'zagolovok', 'zagolovok' );?>
+
+
+
+
+
+<?php function zagolovok1($atts, $content = null){
+    ob_start();
+global $porto_settings, $porto_layout, $post, $porto_member_socials;
+
+$featured_posts = get_field($atts['field']);
+
+if( $featured_posts ): ?>
+    <?php foreach( $featured_posts as $post ): 
+        // Setup this post for WP functions (variable must be named $post).
+        setup_postdata($post); ?>
+        <h3 style="font-size: 18px" class="text-uppercase"><?php the_title(); ?></h3>
+    <?php endforeach; ?>
+    
+    <?php 
+    // Reset the global post object so that the rest of the page works correctly.
+    wp_reset_postdata(); ?>
+<?php endif; 
+    $output = ob_get_contents();
+    ob_end_clean(); 
+    return  $output;
+}?>
+<?php add_shortcode( 'zagolovok1', 'zagolovok1' );?>
 
 
 
@@ -207,12 +234,6 @@ if( $featured_posts ): ?>
 }?>
 <?php
 add_shortcode( 'subcategory', 'subcategory' );?>
-
-
-
-
-
-
 
 
 

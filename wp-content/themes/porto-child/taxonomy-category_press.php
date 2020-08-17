@@ -7,12 +7,10 @@
 global $porto_settings, $porto_layout, $post; ?>
 <?php get_header();?>
 
-<?php if( get_field('image_posts') ): ?>
-    <img src="<?php get_field('image_posts'); ?>" />
-<?php endif; ?>
-<?php if( get_field('tekst') ): ?>
+
+
     <p><?php get_field('tekst'); ?>" </p>
-<?php endif; ?>
+
 
 
 <div class="container-fluid">

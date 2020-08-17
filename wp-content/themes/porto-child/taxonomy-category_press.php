@@ -4,8 +4,7 @@
  * Template Post Type: category_press
  */ 
 
-global $porto_settings, $porto_layout, $post;
-?>
+global $porto_settings, $porto_layout, $post; $term?>
 <?php get_header();?>
 
 <?php if( get_field('image_posts') ): ?>

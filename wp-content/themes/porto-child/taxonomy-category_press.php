@@ -9,6 +9,7 @@ global $porto_settings, $porto_layout, $post; $term?>
 
 <?php
 $image = get_field('image_posts');
+var_dump($image);
 if( $image ):
 
     // Image variables.

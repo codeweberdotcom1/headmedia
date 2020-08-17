@@ -147,7 +147,7 @@ if( $featured_posts ): ?>
     <?php foreach( $featured_posts as $post ): 
         // Setup this post for WP functions (variable must be named $post).
         setup_postdata($post); ?>
-        <a href="<?php the_permalink(); ?>"><h3 style="font-size: 18px" class="text-uppercase"><?php the_title(); ?></h3></a>
+        <a href="<?php the_permalink(); ?>"><h3 style="font-size: 18px" class="mb-0 mb-lg-3 text-uppercase"><?php the_title(); ?></h3></a>
         
     <?php endforeach; ?>
   

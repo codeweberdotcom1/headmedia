@@ -9,7 +9,10 @@ global $porto_settings, $porto_layout, $post; ?>
 
 
 
-    <p><?php echo get_field('tekst'); ?> </p>
+    <p><?php 
+$tekst = get_field('tekst');
+var_dump($tekst);
+    echo get_field('tekst'); ?> </p>
     
 
 

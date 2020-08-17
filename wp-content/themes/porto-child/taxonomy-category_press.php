@@ -8,8 +8,8 @@ global $porto_settings, $porto_layout, $post; $term?>
 <?php get_header();?>
 
 <?php
-$image = get_field('image_posts');
-var_dump($image);
+$image = get_field('imagepress');
+var_dump( $image );
 if( $image ):
 
     // Image variables.

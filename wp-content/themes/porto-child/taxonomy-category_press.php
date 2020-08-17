@@ -8,15 +8,6 @@ global $porto_settings, $porto_layout, $post; ?>
 <?php get_header();?>
 
 
-
-<p><?php 
-$tekst = get_field('tekst', $term, false);
-var_dump( $tekst );
-    echo get_field('tekst'); ?> </p>
-    
-
-
-
 <div class="container-fluid">
 	<div class="row">
 		<div class="col-md-6">

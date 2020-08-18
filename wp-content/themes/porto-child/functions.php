@@ -330,6 +330,7 @@ function services($atts, $content = null){
         // Setup this post for WP functions (variable must be named $post).
 							setup_postdata($post); 
 							?>
+			<a href='<?php the_permalink(); ?>'>
 			<div class="vc_column_container col-md-6 appear-animation fadeInUp appear-animation-visible" data-appear-animation="fadeInUp"><div class="wpb_wrapper vc_column-inner">
 			<div class="wpb_text_column wpb_content_element p-3 shadow-hm-zw">
 				<div class="wpb_wrapper">
@@ -349,7 +350,7 @@ function services($atts, $content = null){
 									</div>
 								</div>
 								<div class="row">
-									<div class="col-md-12"><?php echo get_excerpt(200) ?><a class="btn btn-primary" href="<?php the_permalink(); ?>">Перейти</a>
+									<div class="col-md-12"><?php echo get_excerpt(200) ?>
 									</div>
 								</div>
 							</div>
@@ -357,7 +358,7 @@ function services($atts, $content = null){
 					</div>
 				</div>
 			</div>
-		</div></div>
+		</div></div></a>
 <?php endforeach; ?>
 	</div>
 				<?php 

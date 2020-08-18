@@ -430,9 +430,13 @@ add_shortcode( 'subservices1', 'subservices1' );?>
 
 
 											</ul>
-											<?php endif; ?>
+										<?php 
+    // Reset the global post object so that the rest of the page works correctly.
+wp_reset_postdata(); ?>
+<?php endif; ?>	
 										
 								</div>
+								
 							</div>
 						</div>
 					</div>

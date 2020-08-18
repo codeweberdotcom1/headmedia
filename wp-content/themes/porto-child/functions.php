@@ -349,7 +349,7 @@ function services($atts, $content = null){
 									</div>
 								</div>
 								<div class="row">
-									<div class="col-md-12"><?php echo get_excerpt(200) ?><a href="<?php the_permalink(); ?>">Перейти</a>
+									<div class="col-md-12"><?php echo get_excerpt(200) ?><a class="btn btn-primary" href="<?php the_permalink(); ?>">Перейти</a>
 									</div>
 								</div>
 							</div>

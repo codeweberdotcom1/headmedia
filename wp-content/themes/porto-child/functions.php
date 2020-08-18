@@ -474,7 +474,7 @@ if( $featured_posts ): ?>
 											setup_postdata($post); 
 											?>
 					<div class="row  p-3 mb-3 shadow-hm-zw">
-						<div class="col-2  d-none d-lg-block">
+						<div class="col-2 pl-0 d-none d-lg-block">
 							<?php the_post_thumbnail('thumbnail'); ?>
 						</div>
 						<div class="col-12 col-md-12 col-lg-10">

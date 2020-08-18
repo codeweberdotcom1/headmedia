@@ -473,8 +473,8 @@ if( $featured_posts ): ?>
         // Setup this post for WP functions (variable must be named $post).
 											setup_postdata($post); 
 											?>
-					<div class="row col-12 p-3 mb-3 shadow-hm-zw">
-						<div class="col-2 pl-0 pr-0 d-none d-lg-block">
+					<div class="row  p-3 mb-3 shadow-hm-zw">
+						<div class="col-2  d-none d-lg-block">
 							<?php the_post_thumbnail('thumbnail'); ?>
 						</div>
 						<div class="col-12 col-md-12 col-lg-10">

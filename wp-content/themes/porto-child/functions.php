@@ -391,7 +391,6 @@ add_shortcode( 'subservices1', 'subservices1' );?>
         // Setup this post for WP functions (variable must be named $post).
 												setup_postdata($post); 
 												?>
-										<?php 	var_dump($featured_posts)	?>
 				<div class="vc_column_container col-md-12 appear-animation fadeInUp appear-animation-visible" data-appear-animation="fadeInUp"><div class="wpb_wrapper vc_column-inner">
 					
 						<div class="wpb_text_column wpb_content_element p-3 mb-3 shadow-hm-zw bg-light">
@@ -412,11 +411,25 @@ add_shortcode( 'subservices1', 'subservices1' );?>
 									</div>
 									<div class="row">
 										<div class="col-md-12">
-											
-												<ul class="ulli list-serviсes-hm list list-icons mb-0">
+											<?php $featured_posts1 = get_field('spisok_podkategorij_dlya_vyvoda');
+
+			if( $featured_posts1 ): ?>
+				<div class="container">
+					<div class="vc_row wpb_row row">
+						<ul class="ulli list-serviсes-hm list list-icons mb-0">
+						<?php  foreach( $featured_posts1 as $post ): 
+        // Setup this post for WP functions (variable must be named $post).
+							setup_postdata($post); 
+							?>
+												
 													<li class="mb-2 list-item">
 														<a class="text-secondary" title="Перейти к услуге <?php the_title(); ?>" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
 													</li>
+													<?php endforeach; ?>
+
+
+
+
 											</ul>
 										</div>
 									</div>

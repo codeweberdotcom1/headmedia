@@ -307,6 +307,18 @@ function services($atts, $content = null){
 
 <?php function subservices1($atts, $content = null){
 			ob_start();
+			function get_excerpt($limit, $source = null){
+
+    $excerpt = $source == "content" ? get_the_content() : get_the_excerpt();
+    $excerpt = preg_replace(" (\[.*?\])",'',$excerpt);
+    $excerpt = strip_shortcodes($excerpt);
+    $excerpt = strip_tags($excerpt);
+    $excerpt = substr($excerpt, 0, $limit);
+    $excerpt = substr($excerpt, 0, strripos($excerpt, " "));
+    $excerpt = trim(preg_replace( '/\s+/', ' ', $excerpt));
+    $excerpt = $excerpt.'... <a href="'. the_permalink(); .'">Перейти</a>';
+    return $excerpt;
+}
 
 			global $porto_settings, $porto_layout, $post, $porto_member_socials;
 
@@ -361,18 +373,7 @@ function services($atts, $content = null){
 		<?php
 		add_shortcode( 'subservices1', 'subservices1' );?>
 <?php
-function get_excerpt($limit, $source = null){
 
-    $excerpt = $source == "content" ? get_the_content() : get_the_excerpt();
-    $excerpt = preg_replace(" (\[.*?\])",'',$excerpt);
-    $excerpt = strip_shortcodes($excerpt);
-    $excerpt = strip_tags($excerpt);
-    $excerpt = substr($excerpt, 0, $limit);
-    $excerpt = substr($excerpt, 0, strripos($excerpt, " "));
-    $excerpt = trim(preg_replace( '/\s+/', ' ', $excerpt));
-    $excerpt = $excerpt.'... <a href="'. the_permalink(); .'">Перейти</a>';
-    return $excerpt;
-}
 
 ?>
 

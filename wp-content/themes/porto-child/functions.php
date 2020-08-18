@@ -338,7 +338,7 @@ function services($atts, $content = null){
 									</div>
 								</div>
 								<div class="row">
-									<div class="col-md-12"><?php the_excerpt(); ?>
+									<div class="col-md-12"><?php echo get_excerpt(20) ?>
 									</div>
 								</div>
 							</div>
@@ -361,17 +361,19 @@ function services($atts, $content = null){
 		<?php
 		add_shortcode( 'subservices1', 'subservices1' );?>
 <?php
-/**
- * Filter the except length to 20 words.
- *
- * @param int $length Excerpt length.
- * @return int (Maybe) modified excerpt length.
- */
-function wpdocs_custom_excerpt_length( $length ) {
-    return 20;
-}
-add_filter( 'excerpt_length', 'wpdocs_custom_excerpt_length', 999 );
-?>
+function get_excerpt($limit, $source = null){
 
+    $excerpt = $source == "content" ? get_the_content() : get_the_excerpt();
+    $excerpt = preg_replace(" (\[.*?\])",'',$excerpt);
+    $excerpt = strip_shortcodes($excerpt);
+    $excerpt = strip_tags($excerpt);
+    $excerpt = substr($excerpt, 0, $limit);
+    $excerpt = substr($excerpt, 0, strripos($excerpt, " "));
+    $excerpt = trim(preg_replace( '/\s+/', ' ', $excerpt));
+    $excerpt = $excerpt.'... <a href="'.get_permalink($post->ID).'">more</a>';
+    return $excerpt;
+}
+
+?>
 
 		

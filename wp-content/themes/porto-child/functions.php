@@ -411,7 +411,7 @@ add_shortcode( 'subservices1', 'subservices1' );?>
 									</div>
 									<div class="row">
 										<div class="col-md-12">
-											<?php $featured_posts1 = get_field('field2');
+											<?php $featured_posts1 = get_field('spisok_podkategorij_dlya_vyvoda');
 
 			if( $featured_posts1 ): ?>
 				<div class="container">

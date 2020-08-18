@@ -326,7 +326,7 @@ function services($atts, $content = null){
 						<div class="row">
 							<div class="col-4 d-none d-lg-block"><?php the_post_thumbnail('thumbnail'); ?>
 							</div>
-							
+
 							<div class="col-12 col-md-12 col-lg-8">
 								<div class="row">
 									<div class="col-4 col-md-4 d-block d-lg-none"><?php the_post_thumbnail('thumbnail'); ?>
@@ -338,7 +338,7 @@ function services($atts, $content = null){
 									</div>
 								</div>
 								<div class="row">
-									<div class="col-md-12"><p>Описание краткое</p>
+									<div class="col-md-12"><p><?php the_excerpt(); ?></p>
 									</div>
 								</div>
 							</div>

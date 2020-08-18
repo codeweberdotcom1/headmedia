@@ -502,7 +502,9 @@ if( $featured_posts ): ?>
 											</li>
 										<?php endforeach; ?>
 									</ul>
-									wp_reset_postdata(); ?>
+									<?php 
+    // Reset the global post object so that the rest of the page works correctly.
+wp_reset_postdata(); ?>
 <?php endif; ?>	
 								</div>
 							</div>

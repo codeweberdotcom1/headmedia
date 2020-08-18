@@ -411,7 +411,7 @@ add_shortcode( 'subservices1', 'subservices1' );?>
 									</div>
 									<div class="row">
 										<div class="col-md-12">
-											<?php $featured_posts1 = get_field('spisok_podkategorij_dlya_vyvoda');
+											<?php $featured_posts1 = get_field('field2');
 
 			if( $featured_posts1 ): ?>
 				<div class="container">
@@ -421,7 +421,6 @@ add_shortcode( 'subservices1', 'subservices1' );?>
         // Setup this post for WP functions (variable must be named $post).
 							setup_postdata($post); 
 							?>
-												
 													<li class="mb-2 list-item">
 														<a class="text-secondary" title="Перейти к услуге <?php the_title(); ?>" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
 													</li>

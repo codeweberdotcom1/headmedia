@@ -414,8 +414,7 @@ add_shortcode( 'subservices1', 'subservices1' );?>
 											<?php $featured_posts1 = get_field('spisok_podkategorij_dlya_vyvoda');
 
 			if( $featured_posts1 ): ?>
-				<div class="container">
-					<div class="vc_row wpb_row row">
+				
 						<ul class="ulli list-serviсes-hm list list-icons mb-0">
 						<?php  foreach( $featured_posts1 as $post ): 
         // Setup this post for WP functions (variable must be named $post).
@@ -432,8 +431,7 @@ add_shortcode( 'subservices1', 'subservices1' );?>
 
 											</ul>
 											<?php endif; ?>
-										</div>
-									</div>
+										
 								</div>
 							</div>
 						</div>
@@ -455,6 +453,10 @@ return  $output;
 }?>
 <?php
 add_shortcode( 'subservices2', 'subservices2' );?>
+
+
+
+
 
 
 

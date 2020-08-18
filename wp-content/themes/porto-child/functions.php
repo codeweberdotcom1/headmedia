@@ -475,15 +475,15 @@ if( $featured_posts ): ?>
 											?>
 					<div class="row col-12">
 						<div class="col-2 d-none d-lg-block">
-							<img alt="Bootstrap Image Preview" src="https://via.placeholder.com/150" />
+							<?php the_post_thumbnail('thumbnail'); ?>
 						</div>
 						<div class="col-12 col-md-12 col-lg-10">
 							<div class="row">
 								<div class="col-4 col-md-2 d-block d-lg-none">
-									<img alt="Bootstrap Image Preview" src="https://via.placeholder.com/100" />
+									<?php the_post_thumbnail('thumbnail'); ?>
 								</div>
 								<div class="col-8 col-md-10 d-block title-block">
-									<a href="#"><h3 class="mb-0 mb-lg-3"><?php echo $atts['field1'] ?></h3></a>
+									<a href="<?php the_permalink(); ?>"><h3 class="mb-0 mb-lg-3"><?php the_title(); ?></h3></a>
 								</div>
 								<div class="porto-separator col-12  mt-3 mt-lg-0"><hr class=" separator-line align_center solid" style="background-color:rgba(0,0,0,0.06);"></div>
 							</div>

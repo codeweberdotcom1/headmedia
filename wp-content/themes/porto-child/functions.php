@@ -411,29 +411,7 @@ add_shortcode( 'subservices1', 'subservices1' );?>
 									</div>
 									<div class="row">
 										<div class="col-md-12">
-											<?php $featured_posts1 = get_field('spisok_podkategorij_dlya_vyvoda');
-
-			if( $featured_posts1 ): ?>
-				
-						<ul class="ulli list-serviсes-hm list list-icons mb-0">
-						<?php  foreach( $featured_posts1 as $post ): 
-        // Setup this post for WP functions (variable must be named $post).
-							setup_postdata($post); 
-							?>
-													<li class="mb-2 list-item">
-														<a class="text-secondary" title="Перейти к услуге <?php the_title(); ?>" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-													</li>
-													<?php endforeach; ?>
-													
-
-
-
-
-											</ul>
-										<?php 
-    // Reset the global post object so that the rest of the page works correctly.
-wp_reset_postdata(); ?>
-<?php endif; ?>	
+											
 										
 								</div>
 								

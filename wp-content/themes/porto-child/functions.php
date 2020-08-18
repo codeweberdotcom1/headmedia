@@ -330,19 +330,18 @@ function services($atts, $content = null){
         // Setup this post for WP functions (variable must be named $post).
 							setup_postdata($post); 
 							?>
-			<a href='<?php the_permalink(); ?>'>
+			
 			<div class="vc_column_container col-md-6 appear-animation fadeInUp appear-animation-visible" data-appear-animation="fadeInUp"><div class="wpb_wrapper vc_column-inner">
-				
 			<div class="wpb_text_column wpb_content_element p-3 shadow-hm-zw">
 				<div class="wpb_wrapper">
 					<div class="container">
 						<div class="row">
-							<div class="col-4 d-none d-lg-block"><?php the_post_thumbnail('thumbnail'); ?>
+							<div class="col-4 d-none d-lg-block"><a href='<?php the_permalink(); ?>'><?php the_post_thumbnail('thumbnail'); ?></a>
 							</div>
 
 							<div class="col-12 col-md-12 col-lg-8">
 								<div class="row">
-									<div class="col-4 col-md-4 d-block d-lg-none"><?php the_post_thumbnail('thumbnail'); ?>
+									<div class="col-4 col-md-4 d-block d-lg-none"><a href='<?php the_permalink(); ?>'><?php the_post_thumbnail('thumbnail'); ?></a>
 									</div>
 									<div class="col-8 col-md-8 col-lg-12 d-block title-block"><a href="<?php the_permalink(); ?>"><h3 style="font-size: 18px" class="mb-0 mb-lg-3 text-uppercase"><?php the_title(); ?></h3></a>
 									</div>
@@ -359,7 +358,7 @@ function services($atts, $content = null){
 					</div>
 				</div>
 			</div>
-		</div></div></a>
+		</div></div>
 <?php endforeach; ?>
 	</div>
 				<?php 

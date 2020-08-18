@@ -326,7 +326,7 @@ function services($atts, $content = null){
 						<div class="row">
 							<div class="col-4 d-none d-lg-block"><img src="https://head-media.z-webstore.ru/wp-content/uploads/2020/08/pressa_rk-150x150.jpg" alt="Реклама в печатных изданиях" title="Реклама в печатных изданиях">
 							</div>
-							<?php the_post_thumbnail($id, 'thumbnail'); ?>
+							<?php the_post_thumbnail('thumbnail'); ?>
 							<div class="col-12 col-md-12 col-lg-8">
 								<div class="row">
 									<div class="col-4 col-md-4 d-block d-lg-none">    <img src="https://head-media.z-webstore.ru/wp-content/uploads/2020/08/pressa_rk-150x150.jpg" alt="Реклама в печатных изданиях" title="Реклама в печатных изданиях">

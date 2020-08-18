@@ -244,7 +244,7 @@ function services($atts, $content = null){
 
 
 
-<?php function subservices($atts, $content = null){
+		<?php function subservices($atts, $content = null){
 			ob_start();
 
 			global $porto_settings, $porto_layout, $post, $porto_member_socials;
@@ -305,19 +305,19 @@ function services($atts, $content = null){
 
 
 
-<?php function subservices1($atts, $content = null){
+		<?php function subservices1($atts, $content = null){
 			ob_start();
 			function get_excerpt($limit, $source = null){
 
-    $excerpt = $source == "content" ? get_the_content() : get_the_excerpt();
-    $excerpt = preg_replace(" (\[.*?\])",'',$excerpt);
-    $excerpt = strip_shortcodes($excerpt);
-    $excerpt = strip_tags($excerpt);
-    $excerpt = substr($excerpt, 0, $limit);
-    $excerpt = substr($excerpt, 0, strripos($excerpt, " "));
-    $excerpt = trim(preg_replace( '/\s+/', ' ', $excerpt));
-    return $excerpt;
-}
+				$excerpt = $source == "content" ? get_the_content() : get_the_excerpt();
+				$excerpt = preg_replace(" (\[.*?\])",'',$excerpt);
+				$excerpt = strip_shortcodes($excerpt);
+				$excerpt = strip_tags($excerpt);
+				$excerpt = substr($excerpt, 0, $limit);
+				$excerpt = substr($excerpt, 0, strripos($excerpt, " "));
+				$excerpt = trim(preg_replace( '/\s+/', ' ', $excerpt));
+				return $excerpt;
+			}
 
 			global $porto_settings, $porto_layout, $post, $porto_member_socials;
 
@@ -330,54 +330,121 @@ function services($atts, $content = null){
         // Setup this post for WP functions (variable must be named $post).
 							setup_postdata($post); 
 							?>
-			
-			<div class="vc_column_container col-md-6 appear-animation fadeInUp appear-animation-visible" data-appear-animation="fadeInUp"><div class="wpb_wrapper vc_column-inner">
-				<a href='<?php the_permalink(); ?>'>
-			<div class="wpb_text_column wpb_content_element p-3 mb-3 shadow-hm-zw bg-light hover-services">
-				<div class="wpb_wrapper">
-					<div class="container">
-						<div class="row">
-							<div class="col-4 d-none d-lg-block"><?php the_post_thumbnail('thumbnail'); ?>
-							</div>
 
-							<div class="col-12 col-md-12 col-lg-8">
-								<div class="row">
-									<div class="col-4 col-md-4 d-block d-lg-none"><?php the_post_thumbnail('thumbnail'); ?>
-									</div>
-									<div class="col-8 col-md-8 col-lg-12 d-block title-block"><h3 style="font-size: 18px" class="mb-0 mb-lg-3 text-uppercase"><?php the_title(); ?></h3>
-									</div>
-									<div class="porto-separator col-12 mt-3 mt-lg-0">
-										<hr class=" separator-line align_center solid" style="background-color: rgba(0,0,0,0.06);">
+							<div class="vc_column_container col-md-6 appear-animation fadeInUp appear-animation-visible" data-appear-animation="fadeInUp"><div class="wpb_wrapper vc_column-inner">
+								<a href='<?php the_permalink(); ?>'>
+									<div class="wpb_text_column wpb_content_element p-3 mb-3 shadow-hm-zw bg-light hover-services">
+										<div class="wpb_wrapper">
+											<div class="container">
+												<div class="row">
+													<div class="col-4 d-none d-lg-block"><?php the_post_thumbnail('thumbnail'); ?>
+												</div>
+
+												<div class="col-12 col-md-12 col-lg-8">
+													<div class="row">
+														<div class="col-4 col-md-4 d-block d-lg-none"><?php the_post_thumbnail('thumbnail'); ?>
+													</div>
+													<div class="col-8 col-md-8 col-lg-12 d-block title-block"><h3 style="font-size: 18px" class="mb-0 mb-lg-3 text-uppercase"><?php the_title(); ?></h3>
+													</div>
+													<div class="porto-separator col-12 mt-3 mt-lg-0">
+														<hr class=" separator-line align_center solid" style="background-color: rgba(0,0,0,0.06);">
+													</div>
+												</div>
+												<div class="row">
+													<div class="col-md-12 excerpt-services"><?php echo get_excerpt(130) ?>
+												</div>
+											</div>
+										</div>
 									</div>
 								</div>
-								<div class="row">
-									<div class="col-md-12 excerpt-services"><?php echo get_excerpt(130) ?>
+							</div>
+						</div>
+					</a>
+				</div></div>
+			<?php endforeach; ?>
+		</div>
+	</div>
+	<?php 
+    // Reset the global post object so that the rest of the page works correctly.
+	wp_reset_postdata(); ?>
+<?php endif; ?>
+<?php
+$output = ob_get_contents();
+ob_end_clean(); 
+return  $output;
+}?>
+<?php
+add_shortcode( 'subservices1', 'subservices1' );?>
+
+
+
+
+
+<?php function subservices2($atts, $content = null){
+	ob_start();
+	global $porto_settings, $porto_layout, $post, $porto_member_socials;
+	$featured_posts = get_field($atts['field']);
+	if( $featured_posts ): ?>
+		<div class="container">
+			<div class="vc_row wpb_row row">
+				<?php  foreach( $featured_posts as $post ): 
+        // Setup this post for WP functions (variable must be named $post).
+												setup_postdata($post); 
+												?>
+				<div class="vc_column_container col-md-6 appear-animation fadeInUp appear-animation-visible" data-appear-animation="fadeInUp"><div class="wpb_wrapper vc_column-inner">
+					<a href='<?php the_permalink(); ?>'>
+						<div class="wpb_text_column wpb_content_element p-3 mb-3 shadow-hm-zw bg-light hover-services">
+							<div class="wpb_wrapper">
+								<div class="container">
+									<div class="row">
+										<div class="col-4 d-none d-lg-block"><?php the_post_thumbnail('thumbnail'); ?>
+									</div>
+									<div class="col-12 col-md-12 col-lg-8">
+										<div class="row">
+											<div class="col-4 col-md-4 d-block d-lg-none"><?php the_post_thumbnail('thumbnail'); ?>
+										</div>
+										<div class="col-8 col-md-8 col-lg-12 d-block title-block"><h3 style="font-size: 18px" class="mb-0 mb-lg-3 text-uppercase"><?php the_title(); ?></h3>
+										</div>
+										<div class="porto-separator col-12 mt-3 mt-lg-0">
+											<hr class=" separator-line align_center solid" style="background-color: rgba(0,0,0,0.06);">
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-md-12">
+											
+												<ul class="ulli list-serviсes-hm list list-icons mb-0">
+													<li class="mb-2 list-item">
+														<a class="text-secondary" title="Перейти к услуге <?php the_title(); ?>" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+													</li>
+											</ul>
+										</div>
 									</div>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
-			</div>
 			</a>
 		</div></div>
-<?php endforeach; ?>
+		<?php endforeach; ?>
+
 	</div>
-	</div>
-				<?php 
+</div>
+<?php 
     // Reset the global post object so that the rest of the page works correctly.
-				wp_reset_postdata(); ?>
-			<?php endif; ?>
-			<?php
-			$output = ob_get_contents();
-			ob_end_clean(); 
-			return  $output;
-		}?>
-		<?php
-		add_shortcode( 'subservices1', 'subservices1' );?>
+wp_reset_postdata(); ?>
+<?php endif; ?>
 <?php
+$output = ob_get_contents();
+ob_end_clean(); 
+return  $output;
+}?>
+<?php
+add_shortcode( 'subservices2', 'subservices2' );?>
 
 
-?>
 
-		
+
+
+
+

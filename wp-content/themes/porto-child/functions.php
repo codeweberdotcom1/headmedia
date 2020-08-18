@@ -333,7 +333,7 @@ function services($atts, $content = null){
 			
 			<div class="vc_column_container col-md-6 appear-animation fadeInUp appear-animation-visible" data-appear-animation="fadeInUp"><div class="wpb_wrapper vc_column-inner">
 				<a href='<?php the_permalink(); ?>'>
-			<div class="wpb_text_column wpb_content_element p-3 mb-3 shadow-hm-zw hover-services">
+			<div class="wpb_text_column wpb_content_element p-3 mb-3 shadow-hm-zw .bg-light hover-services">
 				<div class="wpb_wrapper">
 					<div class="container">
 						<div class="row">

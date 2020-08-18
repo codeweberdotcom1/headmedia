@@ -425,12 +425,13 @@ add_shortcode( 'subservices1', 'subservices1' );?>
 														<a class="text-secondary" title="Перейти к услуге <?php the_title(); ?>" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
 													</li>
 													<?php endforeach; ?>
-													<?php endif; ?>
+													
 
 
 
 
 											</ul>
+											<?php endif; ?>
 										</div>
 									</div>
 								</div>

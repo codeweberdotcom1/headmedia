@@ -244,7 +244,7 @@ function services($atts, $content = null){
 
 
 
-		<?php function subservices($atts, $content = null){
+<?php function subservices($atts, $content = null){
 			ob_start();
 
 			global $porto_settings, $porto_layout, $post, $porto_member_socials;
@@ -305,14 +305,22 @@ function services($atts, $content = null){
 
 
 
+<?php function subservices1($atts, $content = null){
+			ob_start();
 
+			global $porto_settings, $porto_layout, $post, $porto_member_socials;
 
+			$featured_posts = get_field($atts['field']);
 
-
-
-		<div class="vc_row wpb_row row">
+			if( $featured_posts ): ?>
+				<div class="container">
+					<div class="vc_row wpb_row row">
+						<?php  foreach( $featured_posts as $post ): 
+        // Setup this post for WP functions (variable must be named $post).
+							setup_postdata($post); 
+							?>
 			<div class="vc_column_container col-md-6 appear-animation fadeInUp appear-animation-visible" data-appear-animation="fadeInUp"><div class="wpb_wrapper vc_column-inner">
-			<div class="wpb_text_column wpb_content_element  vc_custom_1597670116713 p-3 shadow-hm-zw">
+			<div class="wpb_text_column wpb_content_element p-3 shadow-hm-zw">
 				<div class="wpb_wrapper">
 					<div class="container">
 						<div class="row">
@@ -322,7 +330,7 @@ function services($atts, $content = null){
 								<div class="row">
 									<div class="col-4 col-md-4 d-block d-lg-none">    <img src="https://head-media.z-webstore.ru/wp-content/uploads/2020/08/pressa_rk-150x150.jpg" alt="Реклама в печатных изданиях" title="Реклама в печатных изданиях">
 									</div>
-									<div class="col-8 col-md-8 col-lg-12 d-block title-block">            <a href="https://head-media.z-webstore.ru/services/reklama-v-presse/"><h3 style="font-size: 18px" class="mb-0 mb-lg-3 text-uppercase">Реклама в Прессе</h3></a>
+									<div class="col-8 col-md-8 col-lg-12 d-block title-block"><a href="<?php the_permalink(); ?>"><h3 style="font-size: 18px" class="mb-0 mb-lg-3 text-uppercase"><?php the_title(); ?></h3></a>
 									</div>
 									<div class="porto-separator col-12 mt-3 mt-lg-0">
 										<hr class=" separator-line align_center solid" style="background-color: rgba(0,0,0,0.06);">
@@ -335,7 +343,24 @@ function services($atts, $content = null){
 							</div>
 						</div>
 					</div>
-
 				</div>
 			</div>
-		</div></div></div>
+		</div></div>
+<?php endforeach; ?>
+	</div>
+				<?php 
+    // Reset the global post object so that the rest of the page works correctly.
+				wp_reset_postdata(); ?>
+			<?php endif; ?>
+			<?php
+			$output = ob_get_contents();
+			ob_end_clean(); 
+			return  $output;
+		}?>
+		<?php
+		add_shortcode( 'subservices1', 'subservices1' );?>
+
+
+
+
+		

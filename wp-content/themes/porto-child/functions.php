@@ -385,7 +385,7 @@ add_shortcode( 'subservices1', 'subservices1' );?>
 	global $porto_settings, $porto_layout, $post, $porto_member_socials;
 	$featured_posts = get_field($atts['field']);
 	if( $featured_posts ): ?>
-		<div class="container">
+		<div class="">
 			<div class="vc_row wpb_row row">
 				<?php  foreach( $featured_posts as $post ): 
         // Setup this post for WP functions (variable must be named $post).

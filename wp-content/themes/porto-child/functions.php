@@ -253,7 +253,11 @@ $featured_posts = get_field($atts['field']);
 		
 if( $featured_posts ): ?>
 <div class="container">
-	<div class="row">
+	<?php  foreach( $featured_posts as $post ): 
+        // Setup this post for WP functions (variable must be named $post).
+        setup_postdata($post); 
+?>
+	<div class="row col-6">
 		<div class="col-2 d-none d-lg-block">
 			<img alt="Bootstrap Image Preview" src="https://via.placeholder.com/150" />
 		</div>
@@ -263,26 +267,24 @@ if( $featured_posts ): ?>
 					<img alt="Bootstrap Image Preview" src="https://via.placeholder.com/100" />
 				</div>
 				<div class="col-8 col-md-10 d-block title-block">
-					<a href="#"><h3 class="mb-0 mb-lg-3"><?php echo $atts['field1'] ?></h3></a>
+					<a href="<?php the_permalink(); ?>"><h3 class="mb-0 mb-lg-3"><?php the_title(); ?></h3></a>
 				</div>
 <div class="porto-separator col-12  mt-3 mt-lg-0"><hr class=" separator-line align_center solid" style="background-color:rgba(0,0,0,0.06);"></div>
 			</div>
 			<div class="row">
 				<div class="col-md-12">
 					<ul class="ulli list-serviсes-hm list list-icons mb-0">
-						<?php  foreach( $featured_posts as $post ): 
-        // Setup this post for WP functions (variable must be named $post).
-        setup_postdata($post); 
-?>
+						
 						<li class="mb-2 list-item">
 							<a class="text-secondary" title="Перейти к услуге <?php the_title(); ?>" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
 						</li>
-						<?php endforeach; ?>
+						
 					</ul>
 				</div>
 			</div>
 		</div>
 	</div>
+	<?php endforeach; ?>
 </div>
 <?php 
     // Reset the global post object so that the rest of the page works correctly.

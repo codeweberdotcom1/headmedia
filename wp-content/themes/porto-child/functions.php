@@ -338,7 +338,7 @@ function services($atts, $content = null){
 									</div>
 								</div>
 								<div class="row">
-									<div class="col-md-12"><?php echo get_excerpt(20) ?>
+									<div class="col-md-12"><?php echo get_excerpt(50) ?>
 									</div>
 								</div>
 							</div>

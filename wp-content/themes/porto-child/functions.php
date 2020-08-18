@@ -259,11 +259,11 @@ if( $featured_posts ): ?>
         // Setup this post for WP functions (variable must be named $post).
         setup_postdata($post); 
 ?>
-		<div class="col-6">
-		<div class="col-2 d-none d-lg-block">
+		<div class="col-6 row">
+		<div class="col-4 d-none d-lg-block">
 			<img alt="Bootstrap Image Preview" src="https://via.placeholder.com/150" />
 		</div>
-		<div class="col-12 col-md-12 col-lg-10">
+		<div class="col-12 col-md-12 col-lg-8">
 			<div class="row">
 				<div class="col-4 col-md-2 d-block d-lg-none">
 					<img alt="Bootstrap Image Preview" src="https://via.placeholder.com/100" />

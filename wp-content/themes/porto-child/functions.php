@@ -354,7 +354,7 @@ function get_excerpt($limit, $source = null){
 													<div class="col-md-12 excerpt-services"><?php echo get_excerpt(130) ?>
 												</div>
 											</div>
-											<i title="Подробнее" class="red-tooltip view-more Simple-Line-Icons-arrow-right-circle font-weight-semibold"></i>
+											<i title="Перейти к услуге <?php the_title(); ?>" class="red-tooltip view-more Simple-Line-Icons-arrow-right-circle font-weight-semibold"></i>
 										</div>
 									</div>
 								</div>

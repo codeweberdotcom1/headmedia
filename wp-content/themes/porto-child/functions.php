@@ -478,7 +478,7 @@ if( $featured_posts ): ?>
 									<?php the_post_thumbnail('thumbnail'); ?>
 								</div>
 								<div class="col-8 col-md-10 d-block title-block">
-									<a href="<?php the_permalink(); ?>"><h3 class="mb-0 mb-lg-3"><?php the_title(); ?></h3></a>
+									<a href="<?php the_permalink(); ?>"><h3 class="mb-0 mb-lg-3"><?php the_title(); ?></h3><i title="Подробнее" class="red-tooltip view-more Simple-Line-Icons-arrow-right-circle font-weight-semibold"></i></a>
 								</div>
 								<div class="porto-separator col-12  mt-3 mt-lg-0"><hr class=" separator-line align_center solid" style="background-color:rgba(0,0,0,0.06);"></div>
 							</div>

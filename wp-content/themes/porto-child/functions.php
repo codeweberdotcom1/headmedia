@@ -344,7 +344,7 @@ function get_excerpt($limit, $source = null){
 													<div class="row">
 														<div class="col-4 col-md-4 d-block d-lg-none"><?php the_post_thumbnail('thumbnail'); ?>
 													</div>
-													<div class="col-8 col-md-8 col-lg-12 d-block title-block"><h3 style="font-size: 18px" class="mb-0 mb-lg-3 text-uppercase"><?php the_title(); ?></h3>
+													<div class="col-8 col-md-8 col-lg-12 d-block title-block"><h3 style="font-size: 18px" class="mb-0 mb-lg-3 text-uppercase"><?php the_title(); ?></h3><i title="Подробнее" class="red-tooltip view-more Simple-Line-Icons-arrow-right-circle font-weight-semibold"></i>
 													</div>
 													<div class="porto-separator col-12 mt-3 mt-lg-0">
 														<hr class=" separator-line align_center solid" style="background-color: rgba(0,0,0,0.06);">
@@ -403,7 +403,7 @@ add_shortcode( 'subservices1', 'subservices1' );?>
 										<div class="row">
 											<div class="col-4 col-md-4 d-block d-lg-none"><?php the_post_thumbnail('thumbnail'); ?>
 										</div>
-										<div class="col-8 col-md-8 col-lg-12 d-block title-block"><a href='<?php the_permalink(); ?>'><h3 style="font-size: 18px" class="mb-0 mb-lg-3 text-uppercase"><?php the_title(); ?></h3><i title="Подробнее" class="red-tooltip view-more Simple-Line-Icons-arrow-right-circle font-weight-semibold"></i></a>
+										<div class="col-8 col-md-8 col-lg-12 d-block title-block"><a href='<?php the_permalink(); ?>'><h3 style="font-size: 18px" class="mb-0 mb-lg-3 text-uppercase"><?php the_title(); ?></h3></a>
 										</div>
 										<div class="porto-separator col-12 mt-3 mt-lg-0">
 											<hr class=" separator-line align_center solid" style="background-color: rgba(0,0,0,0.06);">

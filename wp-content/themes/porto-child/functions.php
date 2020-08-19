@@ -462,10 +462,9 @@ add_shortcode( 'subservices2', 'subservices2' );?>
 <?php function subservices3($atts, $content = null){
 	ob_start();
 	global $porto_settings, $porto_layout, $post, $porto_member_socials;
-	$featured_posts = get_field($atts['field']);
-if( $featured_posts ): ?>
+if ( have_posts() ) : ?>
 				<div class="container">
-					<?php  foreach( $featured_posts as $post ): 
+					<?php  foreach( $posts as $post ): 
         // Setup this post for WP functions (variable must be named $post).
 											setup_postdata($post); 
 											?>

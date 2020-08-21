@@ -14,8 +14,6 @@ global $porto_settings, $porto_layout, $post; ?>
 if ( have_posts() ) : ?>
 
 				<div class="container">
-					<?php echo get_the_content(); ?>
-<?php the_content(); ?>
 					<h1 class="vc_custom_heading h2-hm-zw mb-4 align-left"><?php post_type_archive_title(); ?></h1>
 					<?php  foreach( $posts as $post ): 
         // Setup this post for WP functions (variable must be named $post).

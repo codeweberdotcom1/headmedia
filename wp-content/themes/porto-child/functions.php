@@ -422,7 +422,7 @@ add_shortcode( 'subservices1', 'subservices1' );?>
 											</div>
 <div class="col-1 col-md-1 col-lg-1 align-self-center">
 											
-											<i title="Перейти к услуге <?php the_title(); ?>" class="red-tooltip view-more  Simple-Line-Icons-arrow-right-circle font-weight-semibold"></i>
+											<i title="Перейти к услуге <?php the_title(); ?>" class="view-more red-tooltip   Simple-Line-Icons-arrow-right-circle font-weight-semibold"></i>
 											
 										</div>
 										</div>

@@ -414,7 +414,7 @@ add_shortcode( 'subservices1', 'subservices1' );?>
 													<div class="col-4 d-none d-lg-block"><?php the_post_thumbnail('widget-thumb-medium'); ?>
 												</div>
 
-												<div class="col-12 col-md-12 col-lg-8">
+												<div class="col-12 col-md-12 col-lg-8 align-self-center">
 													<div class="row">
 														<div class="col-4 col-md-4 d-block d-lg-none"><?php the_post_thumbnail('widget-thumb-medium'); ?>
 													</div>

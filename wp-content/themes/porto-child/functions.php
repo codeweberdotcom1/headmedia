@@ -420,7 +420,7 @@ add_shortcode( 'subservices1', 'subservices1' );?>
 											</div>
 											<div class="col-8 col-md-8 col-lg-12 d-block title-block"><h3 style="font-size: 18px" class="mb-0  text-uppercase"><?php the_title(); ?></h3>
 											</div>
-<div class="col-1 col-md-1 col-lg-1 align-self-center">
+<div class="col-1 p-0 col-md-1 col-lg-1 align-self-center">
 											
 											<i title="Перейти к услуге <?php the_title(); ?>" class=" red-tooltip view-more  Simple-Line-Icons-arrow-right-circle font-weight-semibold"></i>
 											

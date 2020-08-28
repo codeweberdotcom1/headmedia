@@ -421,7 +421,6 @@ add_shortcode( 'subservices1', 'subservices1' );?>
 													<div class="col-8 col-md-8 col-lg-12 d-block title-block"><h3 style="font-size: 18px" class="mb-0 mb-lg-3 text-uppercase"><?php the_title(); ?></h3>
 													</div>
 													<div class="porto-separator col-12 mt-3 mt-lg-0">
-														<hr class=" separator-line align_center solid" style="background-color: rgba(0,0,0,0.06);">
 													</div>
 												</div>
 												<div class="row">

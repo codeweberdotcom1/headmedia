@@ -311,19 +311,19 @@ function services($atts, $content = null){
 
 
 
-<?php
-function get_excerpt($limit, $source = null){
+		<?php
+		function get_excerpt($limit, $source = null){
 
-				$excerpt = $source == "content" ? get_the_content() : get_the_excerpt();
-				$excerpt = preg_replace(" (\[.*?\])",'',$excerpt);
-				$excerpt = strip_shortcodes($excerpt);
-				$excerpt = strip_tags($excerpt);
-				$excerpt = substr($excerpt, 0, $limit);
-				$excerpt = substr($excerpt, 0, strripos($excerpt, " "));
-				$excerpt = trim(preg_replace( '/\s+/', ' ', $excerpt));
-				return $excerpt;
-			}
-?>
+			$excerpt = $source == "content" ? get_the_content() : get_the_excerpt();
+			$excerpt = preg_replace(" (\[.*?\])",'',$excerpt);
+			$excerpt = strip_shortcodes($excerpt);
+			$excerpt = strip_tags($excerpt);
+			$excerpt = substr($excerpt, 0, $limit);
+			$excerpt = substr($excerpt, 0, strripos($excerpt, " "));
+			$excerpt = trim(preg_replace( '/\s+/', ' ', $excerpt));
+			return $excerpt;
+		}
+		?>
 
 		<?php function subservices1($atts, $content = null){
 			ob_start();
@@ -390,53 +390,59 @@ add_shortcode( 'subservices1', 'subservices1' );?>
 
 
 <?php function subservices1small($atts, $content = null){
-			ob_start();
-			
+	ob_start();
 
-			global $porto_settings, $porto_layout, $post, $porto_member_socials;
 
-			$featured_posts = get_field($atts['field']);
+	global $porto_settings, $porto_layout, $post, $porto_member_socials;
 
-			if( $featured_posts ): ?>
-				<div class="container">
-					<div class="vc_row wpb_row row">
-						<?php  foreach( $featured_posts as $post ): 
+	$featured_posts = get_field($atts['field']);
+
+	if( $featured_posts ): ?>
+		<div class="container">
+			<div class="vc_row wpb_row row">
+				<?php  foreach( $featured_posts as $post ): 
         // Setup this post for WP functions (variable must be named $post).
-							setup_postdata($post); 
-							?>
+					setup_postdata($post); 
+					?>
 
-							<div class="vc_column_container col-md-4 appear-animation fadeInUp appear-animation-visible" data-appear-animation="fadeInUp"><div class="wpb_wrapper vc_column-inner">
-								<a title="Перейти к услуге <?php the_title(); ?>"href='<?php the_permalink(); ?>'>
-									<div class="wpb_text_column wpb_content_element p-3 mb-3 shadow-hm-zw bg-light hover-services">
-										<div class="wpb_wrapper">
-											<div class="container">
-												<div class="row">
-													<div class="col-4 d-none d-lg-block"><?php the_post_thumbnail('widget-thumb-medium'); ?>
-												</div>
-
-												<div class="col-12 col-md-12 col-lg-8 align-self-center">
-													<div class="row">
-														<div class="col-4 col-md-4 d-block d-lg-none"><?php the_post_thumbnail('widget-thumb-medium'); ?>
-													</div>
-													<div class="col-8 col-md-8 col-lg-12 d-block title-block"><h3 style="font-size: 18px" class="mb-0  text-uppercase"><?php the_title(); ?></h3>
-													</div>
-												</div>
-												
-											
+					<div class="vc_column_container col-md-4 appear-animation fadeInUp appear-animation-visible" data-appear-animation="fadeInUp"><div class="wpb_wrapper vc_column-inner">
+						<a title="Перейти к услуге <?php the_title(); ?>"href='<?php the_permalink(); ?>'>
+							<div class="wpb_text_column wpb_content_element p-3 mb-3 shadow-hm-zw bg-light hover-services">
+								<div class="wpb_wrapper">
+									<div class="container">
+										<div class="row">
+											<div class="col-4 d-none d-lg-block"><?php the_post_thumbnail('widget-thumb-medium'); ?>
 										</div>
-										<i title="Перейти к услуге <?php the_title(); ?>" class="red-tooltip view-more Simple-Line-Icons-arrow-right-circle font-weight-semibold"></i>
+
+										<div class="col-12 col-md-12 col-lg-8 align-self-center">
+											<div class="row">
+												<div class="col-4 col-md-4 d-block d-lg-none"><?php the_post_thumbnail('widget-thumb-medium'); ?>
+											</div>
+											<div class="col-8 col-md-8 col-lg-12 d-block title-block"><h3 style="font-size: 18px" class="mb-0  text-uppercase"><?php the_title(); ?></h3>
+											</div>
+										</div>
+
+										<div class="col-1 col-md-1 col-lg-1 align-self-center">
+											<div class="row">
+											<i title="Перейти к услуге <?php the_title(); ?>" class="red-tooltip view-more Simple-Line-Icons-arrow-right-circle font-weight-semibold"></i>
+											</div>
+										</div>
+
+
 									</div>
+									
 								</div>
 							</div>
 						</div>
-					</a>
-				</div></div>
-			<?php endforeach; ?>
-		</div>
+					</div>
+				</a>
+			</div></div>
+		<?php endforeach; ?>
 	</div>
-	<?php 
+</div>
+<?php 
     // Reset the global post object so that the rest of the page works correctly.
-	wp_reset_postdata(); ?>
+wp_reset_postdata(); ?>
 <?php endif; ?>
 <?php
 $output = ob_get_contents();
@@ -459,10 +465,10 @@ add_shortcode( 'subservices1small', 'subservices1small' );?>
 			<div class="vc_row wpb_row row">
 				<?php  foreach( $featured_posts as $post ): 
         // Setup this post for WP functions (variable must be named $post).
-												setup_postdata($post); 
-												?>
-				<div class="vc_column_container col-md-12 appear-animation fadeInUp appear-animation-visible" data-appear-animation="fadeInUp"><div class="wpb_wrapper vc_column-inner">
-					
+					setup_postdata($post); 
+					?>
+					<div class="vc_column_container col-md-12 appear-animation fadeInUp appear-animation-visible" data-appear-animation="fadeInUp"><div class="wpb_wrapper vc_column-inner">
+
 						<div class="wpb_text_column wpb_content_element p-3 mb-3 shadow-hm-zw bg-light">
 							<div class="wpb_wrapper">
 								<div class="container">
@@ -483,35 +489,35 @@ add_shortcode( 'subservices1small', 'subservices1small' );?>
 										<div class="col-md-12">
 											<?php $featured_posts1 = get_field('spisok_podkategorij_dlya_vyvoda');
 
-			if( $featured_posts1 ): ?>
-				
-						<ul class="ulli list-serviсes-hm list list-icons mb-0">
-						<?php  foreach( $featured_posts1 as $post ): 
-        // Setup this post for WP functions (variable must be named $post).
-							setup_postdata($post); 
-							?>
-													<li class="mb-2 list-item">
-														<a class="text-secondary" title="Перейти к услуге <?php the_title(); ?>" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-													</li>
-													<?php endforeach; ?>
-											</ul>
-										<?php 
-    // Reset the global post object so that the rest of the page works correctly.
-wp_reset_postdata(); ?>
-<?php endif; ?>	
-										
-								</div>
+											if( $featured_posts1 ): ?>
 
+												<ul class="ulli list-serviсes-hm list list-icons mb-0">
+													<?php  foreach( $featured_posts1 as $post ): 
+        // Setup this post for WP functions (variable must be named $post).
+														setup_postdata($post); 
+														?>
+														<li class="mb-2 list-item">
+															<a class="text-secondary" title="Перейти к услуге <?php the_title(); ?>" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+														</li>
+													<?php endforeach; ?>
+												</ul>
+												<?php 
+    // Reset the global post object so that the rest of the page works correctly.
+												wp_reset_postdata(); ?>
+											<?php endif; ?>	
+
+										</div>
+
+									</div>
+								</div>
 							</div>
 						</div>
-					</div>
-				</div>
-		</div></div>
-		<?php endforeach; ?>
+					</div></div>
+				<?php endforeach; ?>
 
+			</div>
+		</div>
 	</div>
-</div>
-</div>
 </div>
 <?php 
     // Reset the global post object so that the rest of the page works correctly.
@@ -532,36 +538,36 @@ add_shortcode( 'subservices2', 'subservices2' );?>
 	ob_start();
 	global $porto_settings, $porto_layout, $post, $porto_member_socials;
 	$featured_posts = get_field($atts['field']);
-if( $featured_posts ): ?>
-				<div class="container">
-					<?php  foreach( $featured_posts as $post ): 
+	if( $featured_posts ): ?>
+		<div class="container">
+			<?php  foreach( $featured_posts as $post ): 
         // Setup this post for WP functions (variable must be named $post).
-											setup_postdata($post); 
-											?>
-					<div class="row  p-3 mb-3 shadow-hm-zw">
-						<div class="col-2 pl-0 d-none d-lg-block">
-							<?php the_post_thumbnail('thumbnail'); ?>
-						</div>
-						<div class="col-12 col-md-12 col-lg-10">
-							<div class="row">
-								<div class="col-4 col-md-2 d-block d-lg-none">
-									<?php the_post_thumbnail('thumbnail'); ?>
-								</div>
-								<div class="col-8 col-md-10 d-block title-block">
-									<a href="<?php the_permalink(); ?>"><h3 class="mb-0 mb-lg-3"><?php the_title(); ?></h3></a>
-								</div>
-								<div class="porto-separator col-12  mt-3 mt-lg-0"><hr class=" separator-line align_center solid" style="background-color:rgba(0,0,0,0.06);"></div>
+				setup_postdata($post); 
+				?>
+				<div class="row  p-3 mb-3 shadow-hm-zw">
+					<div class="col-2 pl-0 d-none d-lg-block">
+						<?php the_post_thumbnail('thumbnail'); ?>
+					</div>
+					<div class="col-12 col-md-12 col-lg-10">
+						<div class="row">
+							<div class="col-4 col-md-2 d-block d-lg-none">
+								<?php the_post_thumbnail('thumbnail'); ?>
 							</div>
-							<div class="row">
-								<div class="col-md-12">
-									<?php $featured_posts1 = get_field('spisok_podkategorij_dlya_vyvoda');
+							<div class="col-8 col-md-10 d-block title-block">
+								<a href="<?php the_permalink(); ?>"><h3 class="mb-0 mb-lg-3"><?php the_title(); ?></h3></a>
+							</div>
+							<div class="porto-separator col-12  mt-3 mt-lg-0"><hr class=" separator-line align_center solid" style="background-color:rgba(0,0,0,0.06);"></div>
+						</div>
+						<div class="row">
+							<div class="col-md-12">
+								<?php $featured_posts1 = get_field('spisok_podkategorij_dlya_vyvoda');
 
-			if( $featured_posts1 ): ?>
+								if( $featured_posts1 ): ?>
 									<ul class="ulli list-serviсes-hm list list-icons mb-0">
 										<?php  foreach( $featured_posts1 as $post ): 
         // Setup this post for WP functions (variable must be named $post).
-							setup_postdata($post); 
-							?>
+											setup_postdata($post); 
+											?>
 											<li class="mb-2 list-item">
 												<a class="text-secondary" title="Перейти к услуге <?php the_title(); ?>" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
 											</li>
@@ -569,22 +575,22 @@ if( $featured_posts ): ?>
 									</ul>
 									<?php 
     // Reset the global post object so that the rest of the page works correctly.
-wp_reset_postdata(); ?>
-<?php endif; ?>	
-								</div>
+									wp_reset_postdata(); ?>
+								<?php endif; ?>	
 							</div>
 						</div>
 					</div>
-					<?php endforeach; ?>
 				</div>
-				<?php 
+			<?php endforeach; ?>
+		</div>
+		<?php 
     // Reset the global post object so that the rest of the page works correctly.
-				wp_reset_postdata(); ?>
-			<?php endif; ?>
-<?php
-$output = ob_get_contents();
-ob_end_clean(); 
-return  $output;
+		wp_reset_postdata(); ?>
+	<?php endif; ?>
+	<?php
+	$output = ob_get_contents();
+	ob_end_clean(); 
+	return  $output;
 }?>
 <?php
 add_shortcode( 'subservices3', 'subservices3' );?>

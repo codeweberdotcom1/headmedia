@@ -29,7 +29,7 @@ if ( have_posts() ) : ?>
 									<?php the_post_thumbnail('thumbnail'); ?>
 								</div>
 								<div class="col-8 col-md-10 d-block title-block">
-									<a href="<?php the_permalink(); ?>"><h2 style="font-size: 18px" class="font-weight-semibold mb-0 mb-lg-3 text-uppercase"><?php the_title(); ?></h2></a>
+									<a href="<?php the_permalink(); ?>"><h2 style="font-size: 18px; font-weight: 700;" class=" mb-0 mb-lg-3 text-uppercase"><?php the_title(); ?></h2></a>
 								</div>
 								<div class="porto-separator col-12  mt-3 mt-lg-0"><hr class=" separator-line align_center solid" style="background-color:rgba(0,0,0,0.06);"></div>
 							</div>
@@ -48,7 +48,7 @@ if ( have_posts() ) : ?>
 											</li>
 										<?php endforeach; ?>
 									</ul>
-									<i title="Перейти к услуге <?php the_title(); ?>" class="red-tooltip view-more Simple-Line-Icons-arrow-right-circle font-weight-semibold"></i>
+									<i title="Перейти к услуге <?php the_title(); ?>" class="red-tooltip view-more Simple-Line-Icons-arrow-right-circle font-weight-semibold position-absolute font-weight-semibold"></i>
 									<?php 
     // Reset the global post object so that the rest of the page works correctly.
 wp_reset_postdata(); ?>

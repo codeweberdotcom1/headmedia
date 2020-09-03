@@ -29,7 +29,7 @@ if ( have_posts() ) : ?>
 									<?php the_post_thumbnail('thumbnail'); ?>
 								</div>
 								<div class="col-8 col-md-10 d-block title-block">
-									<a href="<?php the_permalink(); ?>"><h2 class="mb-0 mb-lg-3"><?php the_title(); ?></h2></a>
+									<a href="<?php the_permalink(); ?>"><h2 class="mb-0 mb-lg-3 text-uppercase"><?php the_title(); ?></h2></a>
 								</div>
 								<div class="porto-separator col-12  mt-3 mt-lg-0"><hr class=" separator-line align_center solid" style="background-color:rgba(0,0,0,0.06);"></div>
 							</div>

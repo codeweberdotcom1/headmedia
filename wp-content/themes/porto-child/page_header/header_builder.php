@@ -28,7 +28,7 @@ if ( is_customize_preview() && porto_get_wrapper_type() != 'boxed' && 'boxed' ==
 	<div class="side-header-narrow-bar side-header-narrow-bar-<?php echo esc_attr( $current_layout['side_header_toggle'] ); ?>">
 		<div class="side-header-narrow-bar-logo">
 		<?php if ( isset( $current_layout['side_header_toggle_logo'] ) && $current_layout['side_header_toggle_logo'] ) : ?>
-			
+			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?> - <?php bloginfo( 'description' ); ?>"><img src="<?php echo esc_url( $current_layout['side_header_toggle_logo'] ); ?>" alt="<?php esc_attr_e( 'Secondary Logo', 'porto' ); ?>"></a>
 		<?php endif; ?>
 		</div>
 		<div class="side-header-narrow-bar-content">
